@@ -1,7 +1,7 @@
 import express from 'express';
 import bookRoutes from './routes/book.routes.js';
 import errorHandler from './middlewares/error.middleware.js';
-import config from './configuration/config.js';
+import databese from './configuration/databese.js';
 
 const app = express();
 
@@ -18,7 +18,7 @@ const connectDB = async () => {
 
 async function startServer() {
     await connectDB();
-    app.listen(config.port, () => console.log(`Server running on port ${config.port}. Press Ctrl+C to stop.`));
+    app.listen(databese.port, () => console.log(`Server running on port ${databese.port}. Press Ctrl+C to stop.`));
 }
 
 startServer();
